@@ -14,7 +14,10 @@ body {
 }
 
 main {
-    padding: 20px;
+    padding:20px;
+    position: fixed;
+    z-index: 1;
+    padding-left: calc(100px +  20px);
 }
 
 
@@ -26,6 +29,9 @@ main {
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
+    transition: all .5s;
+    min-width: 87px;
+    z-index: 2;
 }
 
 #sidebar-content{
@@ -41,8 +47,8 @@ main {
 }
 
 #user_avatar{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 20px;
 }
@@ -74,7 +80,7 @@ main {
     background-color: #4f46e5;
 }
 
-.side-item:hover:not(active),
+.side-item:hover:not(.active),
 #logout-btn:hover{
     background-color: #e3e9f7;
 }
@@ -84,7 +90,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
     color: #0a0a0a;
 }
 
@@ -129,7 +134,36 @@ main {
     height: 20px;
     border: none;
     cursor: pointer;
-
 }
 
-/*.item-description{}*/
+#open-btn-icon{
+    transition: transform .3s ease;
+}
+
+.open-sidebar #open-btn-icon{
+    transform: rotate(180deg);
+}
+
+.item-description{
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
+}
+
+#sidebar.open-sidebar{
+    min-width: 15%;
+}
+
+#sidebar.open-sidebar .item-description{
+    width: 150px;
+    height: auto;
+}
+
+#sidebar.open-sidebar .side-item a{
+    justify-content: flex-start;
+    gap: 14px;
+}
