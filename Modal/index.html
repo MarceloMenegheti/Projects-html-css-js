@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Modal - login</title>
 </head>
 
@@ -14,16 +15,75 @@
     </button>
 
     <dialog id="modal-1">
-        <h1>teste</h1>
+        <form >
+            <div class="modal-header">
+                <h1 class="modal-title">
+                    Sign in to our plataform
+                </h1>
+
+                <button 
+                class="close-modal" 
+                data-modal="modal-1" 
+                type="button"
+                >
+                <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="email">
+                        <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="name@exemplo.com">
+                    </label>
+                </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="password">
+                        <input 
+                        type="password" 
+                        id="password"
+                        name="password" 
+                        placeholder="••••••••••">
+                    </label>
+                </div>
+            </div>
+
+            <div class="password-options">
+                <div class="remember-password">
+                        <input 
+                            type="checkbox" 
+                            name="remember_password" 
+                            id="remember_password"
+                        >
+                        <label for="remember-password">
+                            Remember Password
+                        </label>
+                    </div>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password
+                    </a>
+                </div>
+
+                <button id="login_button">
+                    Login to your account
+                </button>
+
+                <div class="register">
+                    <span>Not registered?</span>
+                    <a href="#">
+                        login here
+                    </a>
+                </div>
+            </div>
+        </form>
     </dialog>
     
-    <button class="open-modal" data-modal="modal-2">
-        open Modal
-    </button>
-
-    <dialog id="modal-2">
-        <h1>teste 2</h1>
-    </dialog>
 
     <script src="src/JavaScript/script.js"></script>
 </body>
